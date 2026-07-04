@@ -1,6 +1,6 @@
 import type { JobCardProps } from "../../types";
 import JobModal from "../modals/JobModal";
-import { cardClass } from "../../utils/sources";
+import { cardClass, sourceBadgeClass } from "../../utils/sources";
 import { stripHtml } from "../../utils/html";
 import { formatDateLong } from "../../utils/formatting";
 import { useState, useCallback } from "react";
@@ -25,7 +25,7 @@ function JobCard({ job }: JobCardProps) {
         </div>
         <p className="job-message">{plainDescription}</p>
         <div className="job-footer">
-          <span className={`source-badge ${cardClassValue}`}>{job.level}</span>
+          <span className={`source-badge ${sourceBadgeClass(job.level)}`}>{job.level}</span>
         </div>
       </article>
       <JobModal
